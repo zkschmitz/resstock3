@@ -6,6 +6,8 @@
 /project_national/national_upgrades
 /project_testing/testing_baseline
 /project_testing/testing_upgrades
+/project_local_mass
+/project_local_pjm
 /resources/buildstock.csv
 /project_*/**/*.csv
 /project_*/**/*.log
@@ -14,3 +16,4 @@
 .DS_Store
 **/.ipynb_checkpoints/*
 **/data/*
+/outputs

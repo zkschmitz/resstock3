@@ -24,7 +24,7 @@ def download_epws
   exit!
 end
 
-command_list = [:update_measures, :integrity_check_national, :integrity_check_testing, :download_weather]
+command_list = [:update_measures, :integrity_check_national, :integrity_check_testing, :integrity_check_local_pjm, :download_weather]
 
 def display_usage(command_list)
   puts "Usage: openstudio #{File.basename(__FILE__)} [COMMAND]\nCommands:\n  " + command_list.join("\n  ")
@@ -101,6 +101,14 @@ if ARGV[0].to_sym == :integrity_check_testing
   require_relative 'test/integrity_checks'
 
   project_dir_name = 'project_testing'
+  integrity_check(project_dir_name)
+  integrity_check_options_lookup_tsv(project_dir_name)
+end
+
+if ARGV[0].to_sym == :integrity_check_local_pjm
+  require_relative 'test/integrity_checks'
+
+  project_dir_name = 'project_local_pjm'
   integrity_check(project_dir_name)
   integrity_check_options_lookup_tsv(project_dir_name)
 end
