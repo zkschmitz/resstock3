@@ -17,3 +17,5 @@
 **/.ipynb_checkpoints/*
 **/data/*
 /outputs
+/project_remote_ne
+/project_remote_pjm
